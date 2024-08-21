@@ -1,3 +1,4 @@
+import React from 'react';
 import { getAuth, signOut } from "firebase/auth";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from './AuthContext';

@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import { getAuth } from "firebase/auth";
 import * as firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import app from './firebase';
 
 export default function Login() {
