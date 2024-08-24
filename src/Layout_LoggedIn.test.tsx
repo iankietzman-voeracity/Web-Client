@@ -39,7 +39,9 @@ describe('Layout - Logged in', () => {
     it('renders the logged in Layout component view', async () => {
         const nav = screen.getAllByRole('link');
         const navTextArray = nav.map((navItem) => {
-            return navItem.text
+            console.log(navItem);
+            
+            return navItem.innerText
         })
         expect(navTextArray.find(i => i == 'Home')).toBeTruthy();
         expect(navTextArray.find(i => i == 'Account')).toBeTruthy();

@@ -1,4 +1,3 @@
-import React from 'react'
 import app from './firebase'
 import { getAuth, signOut } from 'firebase/auth'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
@@ -27,7 +26,7 @@ export default function Layout() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">{user}Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     {user && (
                         <>

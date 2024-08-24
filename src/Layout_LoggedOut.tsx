@@ -39,7 +39,7 @@ describe('Layout - Logged out', () => {
     it('renders the logged out out Layout component view', async () => {
         const nav = screen.getAllByRole('link');
         const navTextArray = nav.map((navItem) => {
-            return navItem.text
+            return navItem.innerText
         })
         
         expect(navTextArray.find(i => i == 'Home')).toBeTruthy();
