@@ -20,7 +20,7 @@ describe('Layout - Logged out', () => {
     beforeEach(() => {
         act(() => {
             vi.mock('./AuthContext', async (importOriginal) => {
-                const actual = await importOriginal();
+                const actual: object = await importOriginal();
                 return {
                     ...actual,
                     useAuth: () => {
