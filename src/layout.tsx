@@ -1,14 +1,15 @@
 import React from 'react'
+import app from './firebase'
 import { getAuth, signOut } from 'firebase/auth'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 
+
 export default function Layout() {
     const { user } = useAuth()
     const navigate = useNavigate()
-    console.log(useAuth())
 
-    const auth = getAuth()
+    const auth = getAuth(app)
 
     function logout() {
         signOut(auth)
@@ -26,7 +27,7 @@ export default function Layout() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">{user}Home</Link>
                     </li>
                     {user && (
                         <>
@@ -34,7 +35,7 @@ export default function Layout() {
                                 <Link to="/account">Account</Link>
                             </li>
                             <li>
-                                <a onClick={logout}>Logout</a>
+                                <Link to="#" onClick={logout}>Logout</Link>
                             </li>
                         </>
                     )}

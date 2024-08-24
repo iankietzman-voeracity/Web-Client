@@ -28,7 +28,7 @@ export default function Login() {
 
     return (
         <>
-            Login
+            <h2>Login</h2>
             <div id="firebaseui-auth-container"></div>
         </>
     )
