@@ -25,3 +25,6 @@ jobs:
     
     - name: Lint with eslint
       run: npm run lint
+
+    - name: Test with Vitest
+      run: npm run test
