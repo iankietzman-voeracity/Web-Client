@@ -5,7 +5,7 @@ type AuthProviderProps = {
     children: React.ReactNode
 }
 
-type AuthActionFunction = () => void;
+type AuthActionFunction = () => void
 
 type AuthContextType = {
     isAuthenticated: boolean
