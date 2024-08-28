@@ -2,14 +2,14 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { getAuth, User } from 'firebase/auth'
 
 type AuthProviderProps = {
-    children: React.ReactNode;
-  };
+    children: React.ReactNode
+}
 
 type AuthContextType = {
-    isAuthenticated: boolean,
-    user: User | null,
-    isLoading: boolean,
-    login: Function,
+    isAuthenticated: boolean
+    user: User | null
+    isLoading: boolean
+    login: Function
     logout: Function
 }
 

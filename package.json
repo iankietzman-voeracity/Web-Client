@@ -8,7 +8,9 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "test": "vitest"
+        "test": "vitest",
+        "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,yaml}\"",
+        "prettier:check": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
     },
     "dependencies": {
         "eslint-config-airbnb-typescript": "^18.0.0",

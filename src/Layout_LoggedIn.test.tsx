@@ -20,31 +20,28 @@ describe('Layout - Logged in', () => {
     beforeEach(() => {
         act(() => {
             vi.mock('./AuthContext', async (importOriginal) => {
-                const actual: object = await importOriginal();
+                const actual: object = await importOriginal()
                 return {
                     ...actual,
                     useAuth: () => {
                         return {
-                            user: true
+                            user: true,
                         }
-                    }
+                    },
                 }
             })
-            render(
-                <App>
-                </App>
-            )
+            render(<App></App>)
         })
     })
     it('renders the logged in Layout component view', async () => {
-        const nav = screen.getAllByRole('link');
+        const nav = screen.getAllByRole('link')
         const navTextArray = nav.map((navItem) => {
-            console.log(navItem);
-            
+            console.log(navItem)
+
             return navItem.innerText
         })
-        expect(navTextArray.find(i => i == 'Home')).toBeTruthy();
-        expect(navTextArray.find(i => i == 'Account')).toBeTruthy();
-        expect(navTextArray.find(i => i == 'Logout')).toBeTruthy();
+        expect(navTextArray.find((i) => i == 'Home')).toBeTruthy()
+        expect(navTextArray.find((i) => i == 'Account')).toBeTruthy()
+        expect(navTextArray.find((i) => i == 'Logout')).toBeTruthy()
     })
 })

@@ -3,7 +3,6 @@ import { getAuth, signOut } from 'firebase/auth'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 
-
 export default function Layout() {
     const { user } = useAuth()
     const navigate = useNavigate()
@@ -34,7 +33,9 @@ export default function Layout() {
                                 <Link to="/account">Account</Link>
                             </li>
                             <li>
-                                <Link to="#" onClick={logout}>Logout</Link>
+                                <Link to="#" onClick={logout}>
+                                    Logout
+                                </Link>
                             </li>
                         </>
                     )}
