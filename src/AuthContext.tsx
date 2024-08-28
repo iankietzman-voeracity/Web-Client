@@ -5,12 +5,14 @@ type AuthProviderProps = {
     children: React.ReactNode
 }
 
+type AuthActionFunction = () => void;
+
 type AuthContextType = {
     isAuthenticated: boolean
     user: User | null
     isLoading: boolean
-    login: Function
-    logout: Function
+    login: AuthActionFunction
+    logout: AuthActionFunction
 }
 
 const AuthContext = createContext<AuthContextType | null>(null)
