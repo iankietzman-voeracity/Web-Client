@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: 20.16
         cache: 'npm'
+    - name: Install dev dependencies
       run: npm i -D
 
     - name: Check formatting with Prettier
