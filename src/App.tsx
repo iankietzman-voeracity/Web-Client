@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { AuthProvider } from './AuthContext'
 import ProtectedRoute from './ProtectedRoute'
@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <AuthProvider>
-                <Router>
+                <Router basename={"/"}>
                     <Routes>
                         <Route path="/" element={<Layout />}>
                             <Route index element={<>Home</>} />
