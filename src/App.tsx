@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <AuthProvider>
-                <Router basename={"/"}>
+                <Router basename={'/'}>
                     <Routes>
                         <Route path="/" element={<Layout />}>
                             <Route index element={<>Home</>} />
