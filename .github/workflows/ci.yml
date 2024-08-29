@@ -33,7 +33,7 @@ jobs:
         node-version: 20.16
         cache: 'npm'
     - name: Install dev dependencies
-      run: npm i -D
+      run: npm ci
 
     - name: Check formatting with Prettier
       run: npm run prettier:check
@@ -47,15 +47,9 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        # Upload dist folder
-        path: './dist'
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VOERACITY_ALPHA_1 }}
+          channelId: live
+          projectId: voeracity-alpha-1
